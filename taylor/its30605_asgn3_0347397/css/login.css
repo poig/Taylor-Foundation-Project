@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&family=PT+Serif&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#center {
+    display: block;
+    margin-top: 100px;
+}
+
+:root {
+    font-family: 'PT Serif', serif;
+}
+
+body {
+    background-color: #b3735a;
+}
+
+h1 {
+    font-size: 60px;
+    text-align: center;
+    font-family: 'PT Serif', sans-serif;
+    border: 0px solid;
+    padding:10px;
+    background-color: #f5f3ec;
+}
+
+h2 {
+    text-align: center;
+}
+
+hr {
+    color: rgb(0, 0, 0);
+    border-width: 4px;
+}
+
+.box {
+    padding: 50px;
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(0, 0, 0);
+    text-align: center;
+    background-color: #ffe8d6;
+    font-size: 20px;
+}
+
+.box input[type="number"], .box input[type="password"] {
+    border: 0;
+    display: block;
+    border: 2px solid #b7b7a4;
+    padding: 14px 10px;
+    width: 200px;
+    margin: 5px auto;
+    text-align: center;
+    outline: none;
+    border-radius: 25px;
+    transition: 0.25s;
+    font-size: 17px;
+    font-family: 'PT Sans', serif; 
+}
+
+.box input[type="number"]:focus, .box input[type="password"]:focus {
+    border-color: #cb9971;
+    width: 250px;
+}
+
+#Login {
+    border: 0;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 100px;
+    border-radius: 25px;
+    text-align: center;
+    border: 2px solid #b7b7a4;
+    outline: none;
+    transition: 0.25s;
+    cursor: pointer;
+    font-size: 17px;
+    font-family: 'PT Serif', serif; 
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]:read-only {
+    -moz-appearance: textfield;
+    text-align: right;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+    -moz-appearance: textfield;
+}
