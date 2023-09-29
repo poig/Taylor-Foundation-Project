@@ -1,0 +1,7 @@
+CarbonFootprintCalculator.userMainPage$1
+CarbonFootprintCalculator.userMainPage
+CarbonFootprintCalculator.userMainPage$2
+CarbonFootprintCalculator.userMainPage$5
+CarbonFootprintCalculator.userMainPage$6
+CarbonFootprintCalculator.userMainPage$3
+CarbonFootprintCalculator.userMainPage$4
