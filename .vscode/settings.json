@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "SLL.C": "cpp",
+        "CLL.C": "cpp",
+        "DLL.C": "cpp",
+        "StaticStack.C": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
+    }
+}
