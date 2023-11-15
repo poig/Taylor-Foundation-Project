@@ -18,5 +18,9 @@
             "c:\\Users\\junli\\Documents\\javafx-sdk-21\\lib\\javafx.swing.jar",
             "c:\\Users\\junli\\Documents\\javafx-sdk-21\\lib\\javafx.fxml.jar"
         ]
+    },
+    "files.associations": {
+        "iostream": "cpp",
+        "cmath": "cpp"
     }
 }
