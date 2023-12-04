@@ -23,23 +23,6 @@ void addNode(Node *cur, int n) {
     cur->next = newNode; // Link the new node at the end of the list
 }
 
-// Function to display all nodes in the list
-void displayList(Node *cur) {
-    while (cur != NULL) { // Traverse till the end of the list
-        cout << cur->data << " "; // Print the data of current node
-        cur = cur->next;  // Move to next node
-    }
-    cout << endl;
-}
-
-// Function to add a node at the front of the list
-void addFront(Node **tmpHead, int n) {
-    Node *newNode = new Node; // Create a new node
-    newNode->data = n; // Set the data of the new node
-    newNode->next = *tmpHead;  // Link new node with first node   
-    *tmpHead = newNode; // Update head to point to new node
-}
-
 // Function to remove a node from end of the list
 void removeNode(Node *cur) {
     if (cur->next == NULL)
@@ -52,6 +35,14 @@ void removeNode(Node *cur) {
     }
 }
 
+// Function to add a node at the front of the list
+void addFront(Node **tmpHead, int n) { 
+    Node *newNode = new Node; // Create a new node
+    newNode->data = n; // Set the data of the new node
+    newNode->next = *tmpHead;  // Link new node with first node   
+    *tmpHead = newNode; // Update head to point to new node
+}
+
 // Function to remove a node from front of the list
 void removeFront(Node **tmpHead) {
     if ((*tmpHead)->next == NULL)
@@ -61,6 +52,15 @@ void removeFront(Node **tmpHead) {
         *tmpHead = oldHead->next; // Update head to point to second node 
         delete oldHead; // Delete old head node 
     }
+}
+
+// Function to display all nodes in the list
+void displayList(Node *cur) {
+    while (cur != NULL) { // Traverse till the end of the list
+        cout << cur->data << " "; // Print the data of current node
+        cur = cur->next;  // Move to next node
+    }
+    cout << endl;
 }
 
 // Function to get total number of nodes in the list 

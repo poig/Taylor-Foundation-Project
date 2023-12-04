@@ -22,6 +22,36 @@ void addNode(Node *cur, int n) {
     newNode->prev = cur;
 }
 
+void removeNode(Node *cur) {
+    if (cur->next == NULL)
+        cout << "Single Node! RemoveNode aborted!\n";
+    else {
+        while (cur->next->next != NULL)
+            cur = cur->next; 
+        delete cur->next;
+        cur->next = NULL;
+    }
+}
+
+void addFront(Node **tmpHead, int n) {
+    Node *newNode = new Node;
+    newNode->data = n;
+    newNode->next = *tmpHead;    
+    newNode->prev = NULL;
+    *tmpHead = newNode;
+    newNode->next->prev = newNode;
+}
+
+void removeFront(Node **tmpHead) {
+    if ((*tmpHead)->next == NULL)
+        cout << "Single Node! RemoveFront aborted!\n";
+    else {
+        *tmpHead = (*tmpHead)->next;
+        delete (*tmpHead)->prev;
+        (*tmpHead)->prev = NULL;
+    }
+}
+
 void displayList(Node *cur) {
     while (cur != NULL) {
         cout << cur->data << " ";
@@ -43,35 +73,6 @@ void displayReverse(Node *cur) {
     cout << endl;
 }
 
-void addFront(Node **tmpHead, int n) {
-    Node *newNode = new Node;
-    newNode->data = n;
-    newNode->next = *tmpHead;    
-    newNode->prev = NULL;
-    *tmpHead = newNode;
-    newNode->next->prev = newNode;
-}
-
-void removeNode(Node *cur) {
-    if (cur->next == NULL)
-        cout << "Single Node! RemoveNode aborted!\n";
-    else {
-        while (cur->next->next != NULL)
-            cur = cur->next; 
-        delete cur->next;
-        cur->next = NULL;
-    }
-}
-
-void removeFront(Node **tmpHead) {
-    if ((*tmpHead)->next == NULL)
-        cout << "Single Node! RemoveFront aborted!\n";
-    else {
-        *tmpHead = (*tmpHead)->next;
-        delete (*tmpHead)->prev;
-        (*tmpHead)->prev = NULL;
-    }
-}
 
 int getTotalNode(Node *cur) {
     int count = 0;

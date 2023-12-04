@@ -24,14 +24,17 @@ void addNode(Node *cur, int n) {
     cur->next = newNode; // Link the new node at the end of the list
 }
 
-// Function to display all nodes in the list
-void displayList(Node *cur) {
-    Node *tmpHead = cur; // Save head node
-    do {
-        cout << cur->data << " "; // Print the data of current node
-        cur = cur->next;  // Move to next node
-    } while (cur != tmpHead); // Continue until we reach head again (circular)
-    cout << endl;
+// Function to remove a node from end of the list
+void removeNode(Node *cur) {
+    if (cur->next == cur)
+        cout << "Single Node! RemoveNode aborted!\n";
+    else {
+        Node *tmpHead = cur; // Save head node 
+        while (cur->next->next != tmpHead) // Traverse till second last node 
+            cur = cur->next;
+        delete cur->next; // Delete last node 
+        cur->next = tmpHead; // Update second last's next to head (circular)
+    }
 }
 
 // Function to add a node at the front of the list
@@ -44,19 +47,6 @@ void addFront(Node **tmpHead, int n) {
         cur = cur->next;
     *tmpHead = newNode; // Update head to point to new node
     cur->next = newNode; // Update last node's next to new head (circular)
-}
-
-// Function to remove a node from end of the list
-void removeNode(Node *cur) {
-    if (cur->next == cur)
-        cout << "Single Node! RemoveNode aborted!\n";
-    else {
-        Node *tmpHead = cur; // Save head node 
-        while (cur->next->next != tmpHead) // Traverse till second last node 
-            cur = cur->next;
-        delete cur->next; // Delete last node 
-        cur->next = tmpHead; // Update second last's next to head (circular)
-    }
 }
 
 // Function to remove a node from front of the list
@@ -86,6 +76,16 @@ Node * removeFront2(Node *tmpHead) {
         cur->next = tmpHead;  // Update last node's next to new head (circular)
     }
     return tmpHead;
+}
+
+// Function to display all nodes in the list
+void displayList(Node *cur) {
+    Node *tmpHead = cur; // Save head node
+    do {
+        cout << cur->data << " "; // Print the data of current node
+        cur = cur->next;  // Move to next node
+    } while (cur != tmpHead); // Continue until we reach head again (circular)
+    cout << endl;
 }
 
 // Function to get total number of nodes in the list 
